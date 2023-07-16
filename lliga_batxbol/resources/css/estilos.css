@@ -1,0 +1,45 @@
+.container  {
+    @apply w-full md:w-3/4;
+    @apply bg-white;
+}
+.table {
+   @apply w-full;
+}
+
+.table th, .table td{
+    @apply border border-gray-400 px-4 py-2;
+}
+
+.table th {
+    @apply text-gray-500;
+}
+
+.table tbody tr:nth-child(2n+1) {
+    @apply bg-gray-200;
+}
+
+h1 {
+    @apply font-sans text-black text-4xl;
+}
+
+h2 {
+    @apply font-sans text-slate-50 text-4xl;
+}
+
+.active {
+    @apply text-orange-500 font-semibold;
+}
+
+.text-sobre-imatge{
+    position: absolute;
+    width:25%;
+    height:auto;
+    top: 45%;
+    left: 59%; 
+}
+
+select  {
+    @apply  border-neutral-400 focus:border-gray-500 font-sans text-neutral-400 text-sm;
+}
+
+
