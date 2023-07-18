@@ -1,77 +1,101 @@
-# sprint_4_laravel
+# LLIGA BATXBOL
 
-LLIGA BATXBOL
+## Descripció i context
 
-Aplicació web per gestionar una lliga (fictícia) de futbol, entre equips d'alumnes de Batxillerat d'Instituts de Barcelona.
+Aplicació web per gestionar una **lliga de futbol** fictícia, entre equips d'alumnes de Batxillerat d'Instituts de Barcelona,
+desenvolupada en el marc del curs Full Stack de la **IT Academy**.
 
-L'aplicació s'ha programat utilitzant el framework LARAVEL.
-El llenguatge de programació que utilitza aquest framework és PHP.
-El model és MVC (Model - Vista - Controlador).
-Per al disseny Front-End s'ha utilizat TAILWIND.
-Per a la base de dades s'ha utilitzat MySQL.
+L'aplicació permet gestionar **equips** i **partits**.  
 
-REQUERIMENTS
+Tant els uns com els altres tenen una **classe** associada en el Model amb els seus respectius mètodes,  
+i una **taula** a la base de dades.  
 
-1 - Descarregar el projecte.
+S'ha programat un **CRUD** complet per a cada una d'aquestes classes.  
 
-2 - A Visual Studio Code, obrir la carpeta que conté el projecte.
+Queda pendent el login d'usuari.
 
-3 - A la terminal, executar les següents accions, obrint noves terminals quan calgui:
-  
-composer install
+### Equips:
 
-npm install
+Es poden **crear i editar equips**, amb algunes restriccions:
+- No es permet canviar el nom d'un equip, perquè s'entén que la lliga està activa.
+- Tampoc està permés eliminar un equip, pel mateix motiu. De totes maneres, l'aplicació porta aquesta acció programada i es podria activar.  
 
-cp .env.example .env 
-     + editar l'arxiu env, definint un nom per a la base de dades
-     + crear una base de dades buida al nostre localhost (carpeta mysql/data), amb el nom que haguem definit a l'arxiu .env
-     
-php artisan key:generate
-
-npm run dev
-
-php artisan serve
-   (i seguir el link que apareixerà)
-
-
-FUNCIONAMENT DE L'APLICACIÓ
-
-Ara per ara, l'aplicació gestionar equips i partits.
-Tant els uns com els altres tenen una classe associada en el Model.
-S'ha programat un CRUD complet per a cada una d'aquestes classes.
-Encara no s'ha programat el log in d'usuari.
-
-Equips:
+Més endavant l'aplicació pot incloure la **gestió de lligues**, permetent indicar a l'usuari si aquestes estan pendents, actives o finalitzades.  
 
 El seeder de la base de dades porta definits 8 equips. 
-Es poden crear nous equips i editar-los, però no es permet canviar el nom d'un equip, perquè s'entén que la lliga està activa.
-Tampoc està permés eliminar un equip, pel mateix motiu, però l'aplicació porta aquesta acció programada, es podria activar.
-De moment l'aplicació no inclou gestió de lligues, per tant s'entén que seria el programador el que podria activar aquestes opcions mentre la lliga estigués pendent.
-Més endavant l'aplicació es podria ampliar i incloure la gestió de lligues, permetent indicar a l'usuari si aquestes estan pendents, actives o finalitzades.
 
-Partits:
+### Partits:
 
-El seeder porta definits més de 20 partits.
-Es poden crear nous partits i editar-los, només entre equips existents a la base de dades.
-Mentre un partit està 'Pendent', els camps corresponents als gols de cada equip es poden deixar buits.
-Quan en editar un partit s'introdueix el resultat del mateix, l'estat del mateix passa de 'Pendent' a 'Jugat'.
-Quan un partit està 'Jugat', es pot editar també, però aleshores passa a ser obligatori tornar a omplir els camps corresponents als gols: 
-no es poden deixar buits.
-Es pot variar el resultat del partit, i el programa corregirà automàticament la puntuació i totes les variables relacionades (partits guanyats, perduts, empatats...).
-L'aplicació no permet eliminar un partit quan el seu estat és 'Jugat'.
+Es poden **crear i editar partits** entre equips existents a la base de dades.  
 
-L'aplicació inclou vistes de:
+Mentre un partit està **'Pendent'**, en editar-lo es poden deixar buits els camps corresponents als gols de cada equip.  
 
-  -conjunt d'equips participants
-  -cada equip en particular
-  -creació d'equip
-  -edició d'equip
-  -comjunt d'equips amb classificació, ordenats de més a menys punts
+Quan en editar un partit s'introdueix el resultat del mateix, l'estat del mateix passa de **'Pendent'** a **'Jugat'**.  
+
+Està permès corregir el resultat d'un partit **'Jugat'**, i el programa modificarà automàticament la puntuació dels equips participants i totes les altres variables relacionades (partits guanyats, perduts, empatats...).  
+
+Restriccions:
+- En editar un partit que ha passat a **'Jugat'** els camps corresponents als gols no es poden deixar buits.
+- No es pot eliminar un partit si ha passat a **'Jugat'**.
+
+L'aplicació inclou vistes de:  
+
+- conjunt d'equips participants
+- vista de cada equip en particular
+- creació d'equip
+- edició d'equip
+- conjunt d'equips amb **classificació**, ordenats de més a menys punts 
+- llista de partits amb data, hora, camp, equips participants i estat
+- llista de partits amb el seu resultat
+- creació de partit
+- edició de partit
+- vista d'un partit amb resum del mateix
+
+El seeder de la base de dades porta definits 20 partits.
+
+## Tecnologies utilitzades
+
+- Framework: LARAVEL
+- Llenguatge: PHP
+- Model: MVC 
+- TAILWIND
+- MySQL
+
+## Accés al projecte
+
+- Descarregar el projecte.
+
+- A Visual Studio Code, obrir la carpeta que conté el projecte.
+
+- A la terminal, executar les següents accions, obrint noves terminals quan calgui:
   
-  -conjunt de partits amb data, hora, camp, equips i estat
-  -conjunt de partits només amb el resultat
-  -creació de partits
-  -edició de partits
+```composer install```
+
+```npm install```
+
+```cp .env.example .env``` 
+
+- Editar l'arxiu env, definint un nom per a la base de dades al camp: .
+  
+- Crear una base de dades buida al nostre localhost (carpeta mysql/data), amb el nom que haguem definit a l'arxiu .env.
+     
+```php artisan key:generate```
+
+```npm run dev```
+
+Per carregar o recarregar la base de dades tornant al seu estat inicial: 
+
+```php artisan migrate:fresh --seed``` 
+
+Per obrir el projecte al navegador:
+
+```php artisan serve```
+   
+   
+
+
+
+
 
 
 
