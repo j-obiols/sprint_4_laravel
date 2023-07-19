@@ -8,7 +8,7 @@ desenvolupada en el marc del curs Full Stack de la **IT Academy**.
 L'aplicació permet gestionar **equips** i **partits**.  
 
 Tant els uns com els altres tenen una **classe** associada en el Model amb els seus respectius mètodes,  
-i una **taula** a la base de dades.  
+i una **taula** a una base de dades MySQL. 
 
 S'ha programat un **CRUD** complet per a cada una d'aquestes classes.  
 
@@ -34,9 +34,9 @@ Quan en editar un partit s'introdueix el resultat del mateix, l'estat del mateix
 
 Està permès corregir el resultat d'un partit **'Jugat'**, i el programa modificarà automàticament la puntuació dels equips participants i totes les altres variables relacionades (partits guanyats, perduts, empatats...).  
 
-Restriccions:
-- En editar un partit que ha passat a **'Jugat'** els camps corresponents als gols no es poden deixar buits.
-- No es pot eliminar un partit si ha passat a **'Jugat'**.
+Restriccions en editar un partit que ha passat a **'Jugat'**:
+- Els camps corresponents als gols no es poden deixar buits.
+- No es pot eliminar el partit.
 
 L'aplicació inclou vistes de:  
 
@@ -67,7 +67,7 @@ El seeder de la base de dades porta definits 20 partits.
 
 - A Visual Studio Code, obrir la carpeta que conté el projecte.
 
-- A la terminal, executar les següents accions, obrint noves terminals quan calgui:
+- A la terminal de VSC, executar les següents accions, obrint noves terminals quan calgui:
   
 ```composer install```
 
@@ -75,7 +75,9 @@ El seeder de la base de dades porta definits 20 partits.
 
 ```cp .env.example .env``` 
 
-- Editar l'arxiu env, definint un nom per a la base de dades al camp: .
+- Editar l'arxiu env, definint un nom per a la base de dades al camp:
+
+ ```DB_DATABASE = nomBaseDades ```
   
 - Crear una base de dades buida al nostre localhost (carpeta mysql/data), amb el nom que haguem definit a l'arxiu .env.
      
@@ -83,7 +85,7 @@ El seeder de la base de dades porta definits 20 partits.
 
 ```npm run dev```
 
-Per carregar o recarregar la base de dades tornant al seu estat inicial: 
+Per poblar la base de dades, o per recarregar-la quan vulguem tornar al seu estat inicial: 
 
 ```php artisan migrate:fresh --seed``` 
 
