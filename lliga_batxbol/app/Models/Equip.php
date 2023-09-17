@@ -15,6 +15,20 @@ class equip extends Model
 
     //Aquí es definirien els camps protegits:
     protected $guarded = [];
+    
+    
+    //Relació un a molts
+    public function partitsLocals(){
+        return $this->hasMany('App\Models\Partits', 'equip_local_id');
+    }
 
+
+    //Relació un a molts
+    public function partitsVisitant(){
+        return $this->hasMany('App\Models\Partits', 'equip_visitant_id');
+    }
+
+
+   
    
 }
