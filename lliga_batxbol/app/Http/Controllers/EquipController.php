@@ -36,33 +36,21 @@ class EquipController extends Controller
 
     public function store(StoreEquip $request){
 
-        //return $request->all();
-        /*$equip = new Equip;
-        $equip->nom = $request->nom;
-        $equip->entrenador = $request->entrenador;
-        $equip->email = $request->email;
-        $equip->save();*/
-
-        //Assignació massiva per estalviar codi:
         $equip = Equip::Create($request->all());
 
         return redirect()->route('equips.show', $equip->id);
     }
 
     public function show(Equip $equip){
-        /*return view('equips.show', ['equip' => $equip]);
-        Retornem (vista, [array de variables])
-        Opció b: el mètode compact() crea autom. l'array de variables que volem enviar a la vista:*/
-        //$equip = Equip::find($id) -> per trobar l'equip si el mètode show rebés la $id;
+    
         return view('equips.show', compact('equip'));
+
     }
 
     public function edit(Equip $equip){
-        /*public function edit($id){
-        $equip=Equip::find($id);
-        return $equip;}
-        Això ho formularem amb menys codi.*/
+    
         return view('equips.edit', compact('equip'));
+
     }
 
     public function update(UpdateEquip $request, Equip $equip) {
@@ -90,7 +78,7 @@ class EquipController extends Controller
         $message = "(*) No es pot eliminar un equip mentre la lliga està activa.";
 
         return back()->withErrors($message);
-        
-        
+         
     }
+    
 }

@@ -6,48 +6,30 @@ use App\Models\Partit;
 use App\Models\Equip;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 /*Indiquem que utilitzi les normes de validació descrites en els arxius Request:*/
 use App\Http\Requests\StorePartit;
 use App\Http\Requests\UpdatePartit;
 
-class PartitController extends Controller
-{
+class PartitController extends Controller {
+
+
     public function index(){
 
-        /*foreach($partits as $partit) {
-
-            if($partit -> pPendent = true) {
-                $partit -> pPendent = "Pendent";
-            } else {
-                $partit-> pPendent = "Jugat";
-            }
-            
-            return $partits;   
-        }*/
-
-        $partits = Partit::paginate();
+        $partits = Partit::orderBy('dataPartit', 'desc')->paginate();
 
         return view('partits.index', compact('partits'));
     }
 
-    public function calendari(){
-
-        $partits = Partit::orderBy('dataPartit')->paginate();
-
-        //return $equips;
-
-        return view('partits.calendari', compact('partits'));
-    }
 
     public function resultats(){
 
-        $partits = Partit::orderBy('dataPartit')->paginate();
-
-        //return $equips;
+        $partits = Partit::orderBy('dataPartit', 'desc')->paginate();
 
         return view('partits.resultats', compact('partits'));
     }
+
 
     public function create(){
 
@@ -56,24 +38,38 @@ class PartitController extends Controller
         return view('partits.create', compact('equips'));
     }
 
+
     public function store(StorePartit $request){
 
-        //Assignació massiva per estalviar codi:
-        $partit = Partit::Create($request->all());
-        
-    
-        //return redirect()->route('partits.show', $partit->id);
+        $partit = Partit::create([
+
+            'dataPartit' => $request->dataPartit,
+            'horaPartit' => $request->horaPartit,
+            'camp' => $request->camp,
+            'equip_local_id' => Equip::where('nom', $request -> equip_local_id)->first()->id,
+            'equip_visitant_id' => Equip::where('nom', $request -> equip_visitant_id)->first()->id
+            
+        ]);
+
+      
         return redirect()->route('partits.index');
+
     }
 
+
     public function show(Partit $partit){
+
         return view('partits.show', compact('partit'));
+
     }
+
 
     public function edit(Partit $partit){
 
         return view('partits.edit', compact('partit'));
+
     }
+
 
     public function update(UpdatePartit $request, Partit $partit) {
 
@@ -92,8 +88,10 @@ class PartitController extends Controller
         }
 
         return view('partits.show', compact('partit'));
+
     }
 
+    
     public function destroy(Partit $partit){
 
         if ($partit->pPendent=='Pendent') {

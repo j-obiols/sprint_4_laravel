@@ -19,11 +19,11 @@
                 </thead>
                 @foreach ($partits as $partit)
                     <tr class="border-b border-slate-200 text-orange-500 transition duration-300 ease-in-out hover:bg-slate-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
-                        <td class="py-5  w-1/5 pl-10 tracking-wide"> {{$partit->equipLocal}}</td>
+                        <td class="py-5  w-1/5 pl-10 tracking-wide"> {{$partit->obtenirEquipLocal->nom}}</td>
                         <td class="py-5 w-1/5 tracking-wide"> {{$partit->golsEquipLocal}} </td>
                         <td class="py-5 w-1/10 tracking-wide">-</td>
                         <td class="py-5 w-1/5 tracking-wide" >{{$partit->golsEquipVisitant}}</td>
-                        <td class="py-5 w-1/5 tracking-wide">{{$partit->equipVisitant}}</td>
+                        <td class="py-5 w-1/5 tracking-wide">{{$partit->obtenirEquipVisitant->nom}}</td>
                         <td class="py-5 w-1/10 pl-5 md:pl-20 pr-5 text-right tracking-wide">
                             <a href="{{route('partits.show', $partit)}}">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">

@@ -23,7 +23,7 @@
               Equips
             </a>
             <a href="{{route('partits.index')}}" class="block mt-4 lg:inline-block lg:mt-0 text-slate-500 hover:text-orange-500 tracking-wide mr-5 {{request()->routeIs('partits.index')? 'active' : ''}}">
-              Partits
+              Calendari de partits
           </a>
           <a href="{{route('partits.resultats')}}" class="block mt-4 lg:inline-block lg:mt-0 text-slate-500 hover:text-orange-500 tracking-wide mr-5 {{request()->routeIs('partits.resultats')? 'active' : ''}}">
             Resultats

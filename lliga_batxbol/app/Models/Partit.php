@@ -13,8 +13,8 @@ class partit extends Model
 
     /*En aquest array es defineixen els camps que es poden
     omplir per assignació massiva.*/
-    protected $fillable = ['dataPartit', 'horaPartit','camp', 'equipLocal', 
-    'equipVisitant', 'golsEquipLocal', 'golsEquipVisitant'];
+    protected $fillable = ['dataPartit', 'horaPartit','camp', 'equip_local_id', 
+    'equip_visitant_id', 'golsEquipLocal', 'golsEquipVisitant'];
 
     //Aquí es definirien els camps protegits:
     protected $guarded = [];
@@ -48,10 +48,9 @@ class partit extends Model
     public function resultat($partit){
 
         $equips = Equip::all();
-        $equipLocal = Equip::where('nom', $partit->equipLocal)->first();
-        $equipVisitant = Equip::where('nom', $partit->equipVisitant)->first();
-        //return $equipLocal->entrenador;
-        //return $partit->golsEquipVisitant;
+        $equipLocal = $partit->obtenirEquipLocal;
+        $equipVisitant = $partit->obtenirEquipVisitant;
+    
          
         switch($partit->pPendent) {
 
@@ -316,6 +315,17 @@ class partit extends Model
         $equipVisitant->save();  
         $partit->save();
        
+    }
+
+    public function obtenirEquipLocal(){
+
+       return $this->belongsTo('App\Models\Equip', 'equip_local_id');
+       
+    }
+
+    public function obtenirEquipVisitant() {
+
+       return $this->belongsTo('App\Models\Equip', 'equip_visitant_id');
     }
 
 }

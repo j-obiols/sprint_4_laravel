@@ -54,11 +54,11 @@
             <table class="w-full text-sm md:text-base lg:text-xl text-center text-orange-500 font-semibold tracking-wide">
                <tbody>
                   <tr class="px-5">
-                     <td class="py-5 px-3"> {{$partit->equipLocal}}</td>
+                     <td class="py-5 px-3"> {{$partit->obtenirEquipLocal->nom}}</td>
                      <td class="py-5 px-3"> {{$partit->golsEquipLocal}} </td>
                      <td class="py-5 px-3">-</td>
                      <td class="py-5 px-3" >{{$partit->golsEquipVisitant}}</td>
-                     <td class="py-5 px-3">{{$partit->equipVisitant}}</td>
+                     <td class="py-5 px-3"> {{$partit->obtenirEquipVisitant->nom}}</td>
                   </tr>       
                </tbody>
             </table>  
