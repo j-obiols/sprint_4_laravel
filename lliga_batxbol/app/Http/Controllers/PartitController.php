@@ -18,7 +18,7 @@ class PartitController extends Controller {
 
     public function index(){
 
-        $partits = Partit::orderBy('dataPartit', 'desc')->paginate();
+        $partits = Partit::orderBy('dataPartit')->paginate();
 
         return view('partits.index', compact('partits'));
     }
@@ -26,7 +26,7 @@ class PartitController extends Controller {
 
     public function resultats(){
 
-        $partits = Partit::orderBy('dataPartit', 'desc')->paginate();
+        $partits = Partit::orderBy('dataPartit')->paginate();
 
         return view('partits.resultats', compact('partits'));
     }
