@@ -39,8 +39,6 @@ Route::delete('equips/{equip}', [EquipController::class, 'destroy'])->name('equi
 
 Route::get('partits', [PartitController::class, 'index'])->name('partits.index');
 
-Route::get('partits/calendari', [PartitController::class, 'calendari'])->name('partits.calendari');
-
 Route::get('partits/resultats', [PartitController::class, 'resultats'])->name('partits.resultats');
 
 Route::get('partits/create', [PartitController::class, 'create'])->name('partits.create');

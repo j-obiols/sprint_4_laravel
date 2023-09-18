@@ -13,9 +13,9 @@
     
     </div>
 
-    <div class="w-30%  rounded pl-5 pt-5 bg-opacity-5 text-sobre-imatge">
-        <p class="text-slate-500 text-base sm:text-2xl lg:text-3xl leading-normal">El Milà, campió de la lliga <span class="text-orange-500">
-            BatxBol BCN </span>22/23!</p>
+    <div class="w-35% rounded pl-5 pt-20 bg-opacity-5 text-sobre-imatge">
+        <p class="text-slate-500 text-xl sm:text-3xl lg:text-5xl lg:leading-relaxed">Arrenca la lliga <span class="text-orange-500">23/24!</span>
+        </p>
         <br>
     
     </div>

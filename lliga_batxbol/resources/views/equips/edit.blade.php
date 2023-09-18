@@ -22,7 +22,7 @@
             Nom de l'equip(*):
           </label>
 
-          <input type="text" name="nom" value="{{old('nom')}}" id="nom" placeholder="{{$equip->nom}}" readonly class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" >
+          <input type="text" name="nom" value="{{$equip->nom}}" id="nom" readonly class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" >
           
           <p class="text-slate-500 text-xs italic pb-5 pt-5">
             *El nom de l'equip no es pot canviar fins que la lliga en curs no finalitzi. 
@@ -38,7 +38,7 @@
               Nom i Cognom Entrenador:
           </label>
 
-          <input type="text" name="entrenador" value="{{old('entrenador')}}" id="entrenador"  placeholder="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
+          <input type="text" name="entrenador" value="{{$equip->entrenador}}" id="entrenador"  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
           
           <p class="text-orange-500 text-xs italic">
 
@@ -58,7 +58,7 @@
               Email Entrenador:
           </label>
 
-          <input type="text" name="email" value="{{old('email')}}" id="email" placeholder="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
+          <input type="text" name="email" value="{{$equip->email}}" id="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
           
           <p class="text-orange-500 text-xs italic">
 
@@ -78,7 +78,7 @@
               Nom i Cognom Capità:
           </label>
 
-          <input type="text" name="capita" value="{{old('capita')}}" id="capita" placeholder=" " class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
+          <input type="text" name="capita" id="capita" value="{{$equip->capita}} " class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
           
           <p class="text-orange-500 text-xs italic">
 

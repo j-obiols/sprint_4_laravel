@@ -16,8 +16,10 @@ return new class extends Migration
             $table->date('dataPartit');
             $table->time('horaPartit');
             $table->string('camp');
-            $table->string('equipLocal');
-            $table->string('equipVisitant');
+            $table->unsignedBigInteger('equip_local_id');
+            $table->foreign('equip_local_id')->references('id')->on('equips')->onUpdate('cascade');
+            $table->unsignedBigInteger('equip_visitant_id');
+            $table->foreign('equip_visitant_id')->references('id')->on('equips')->onUpdate('cascade');
             $table->text('resumPartit')->nullable();
             $table->integer('golsEquipLocal')->nullable();
             $table->integer('golsEquipLocalOld')->nullable();

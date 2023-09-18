@@ -27,16 +27,6 @@
 
          </div> 
 
-         <div class="ml-6">
-
-            <a href={{route('partits.index')}}>
-               <span class="shadow-md inline-block bg-slate-100 hover:text-orange-500 hover:bg-slate-50 text-slate-500 text-xs md:text-sm py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                  Tornar a Partits
-               </span>
-            </a>
-
-         </div> 
-
       </div>
    </div>
    
@@ -54,17 +44,17 @@
             <table class="w-full text-sm md:text-base lg:text-xl text-center text-orange-500 font-semibold tracking-wide">
                <tbody>
                   <tr class="px-5">
-                     <td class="py-5 px-3"> {{$partit->equipLocal}}</td>
+                     <td class="py-5 px-3"> {{$partit->obtenirEquipLocal->nom}}</td>
                      <td class="py-5 px-3"> {{$partit->golsEquipLocal}} </td>
                      <td class="py-5 px-3">-</td>
                      <td class="py-5 px-3" >{{$partit->golsEquipVisitant}}</td>
-                     <td class="py-5 px-3">{{$partit->equipVisitant}}</td>
+                     <td class="py-5 px-3"> {{$partit->obtenirEquipVisitant->nom}}</td>
                   </tr>       
                </tbody>
             </table>  
 
             <div class="px-6 py-3 ml-4">
-               <p class="text-slate-400 text-sm md:text-base  leading-loose">
+               <p class="text-slate-400 text-sm md:text-base">
                   <span class="text-xs md:text-sm tracking-wide">Data:</span> {{$partit->data($partit)}} <br>
                   <span class="text-xs md:text-sm tracking-wide">Hora:</span> {{$partit->hora($partit)}} h<br>
                   <span class="text-xs md:text-sm tracking-wide">Camp: </span>{{$partit->camp}}<br>

@@ -40,7 +40,7 @@
                                </svg> </td>
                             <td class="py-5 text-left pr-1 md:pr-6 text-orange-500 tracking-wide font-medium pr-5">
                                 <a href="{{route('partits.show', $partit)}}">
-                                {{$partit->equipLocal."  -  ".$partit->equipVisitant}}  
+                                {{$partit->obtenirEquipLocal->nom."  -  ".$partit->obtenirEquipVisitant->nom}}  
                                 </a>
                             </td>
                             <td class="py-5  text-left tracking-wide pr-1 md:pr-6">{{$partit->camp}}</td>

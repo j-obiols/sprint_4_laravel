@@ -17,8 +17,8 @@
                     <label class="block text-slate-400 text-xs md:text-sm font-semibold tracking-wide mb-2" for="dataPartit">
                         Data del partit:
                     </label>
-                    <input type="date" id="dataPartit" name="dataPartit" value="2022-09-01"
-                    min="2022-09-01" max="2023-05-30" value="{{old('dataPartit')}}" class="shadow appearance-none border rounded w-full py-2 px-3 text-slate-500 leading-tight focus:outline-none focus:shadow-outline" >
+                    <input type="date" id="dataPartit" name="dataPartit" value="2023-09-01"
+                    min="2023-09-01"  class="shadow appearance-none border rounded w-full py-2 px-3 text-slate-500 leading-tight focus:outline-none focus:shadow-outline" >
                 </div>
 
                 <p class="text-orange-500 text-xs italic">
@@ -51,9 +51,9 @@
                         Nom de l'equip Local:
                     </label>
                     <div class="inline-block relative w-full">
-                        <select name="equipLocal" class="block appearance-none w-full bg-white px-4 py-2 pr-8 rounded shadow leading-tight text-slate-500 focus:outline-none focus:shadow-outline">
+                        <select name="equip_local_id" class="block appearance-none w-full bg-white px-4 py-2 pr-8 rounded shadow leading-tight text-slate-500 focus:outline-none focus:shadow-outline">
                             @foreach($equips as $equip) {
-                                <option value="{{$equip->nom}}" > 
+                                <option value="{{$equip->nom}}"> 
                                     {{$equip->nom}}
                                 </option>
                             }
@@ -63,8 +63,9 @@
                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                         </div>
                     </div>
+
                     <p class="text-orange-500 text-xs italic">
-                        @error('equipLocal')
+                        @error('equip_local_id')
                             <br>
                             <small>*{{$message}}</small>
                             <br>
@@ -79,9 +80,9 @@
                     </label>
 
                     <div class="inline-block relative w-full">
-                        <select name="equipVisitant" class="block appearance-none w-full bg-white px-4 py-2 pr-8 rounded shadow leading-tight text-slate-500 focus:outline-none focus:shadow-outline">
+                        <select name="equip_visitant_id" class="block appearance-none w-full bg-white px-4 py-2 pr-8 rounded shadow leading-tight text-slate-500 focus:outline-none focus:shadow-outline">
                             @foreach($equips as $equip) {
-                                <option value="{{$equip->nom}}" default=""> 
+                                <option value="{{$equip->nom}}"> 
                                     {{$equip->nom}}
                                 </option>
                             }
@@ -93,7 +94,7 @@
                     </div>
 
                     <p class="text-orange-500 text-xs italic">
-                        @error('equipVisitant')
+                        @error('equip_visitant_id')
                             <br>
                             <small>*{{$message}}</small>
                             <br>

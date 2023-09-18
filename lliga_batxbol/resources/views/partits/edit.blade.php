@@ -19,8 +19,8 @@
                     Data del partit:
                 </label>
 
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="date" id="start" name="dataPartit" value="2022-10-01"
-                min="2022-10-01" max="2023-05-30" value="{{old('dataPartit', $partit->dataPartit)}}">
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="date" id="start" name="dataPartit" 
+                min="2023-9-01"  value="{{$partit->dataPartit}}">
                 
                 <p class="text-orange-500 text-xs italic pb-3">
                     @error('dataPartit')
@@ -39,7 +39,7 @@
                 </label>
 
                 <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="time" id="horaPartit" name="horaPartit" min="09:00" max="20:00" 
-                value="{{old('horaPartit', $partit->horaPartit)}}">
+                value="{{$partit->horaPartit}}">
                 
                 <p class="text-orange-500 text-xs italic">
                     @error('horaPartit')
@@ -54,7 +54,7 @@
                 <label class="block  text-slate-400 text-xs md:text-sm font-semibold tracking-wide mb-2" for="password">
                     Camp:
                 </label>
-                <input type="text" name="camp" value="{{old('camp')}}" id="camp" placeholder="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
+                <input type="text" name="camp" value=" {{$partit->camp}}" id="camp" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
                 
                 <p class="text-orange-500 text-xs italic pb-3">
                     @error('camp')
@@ -69,7 +69,7 @@
             <label class="block  text-slate-400 text-xs md:text-sm font-semibold tracking-wide mb-2" for="capita">
                 Nom de l'equip Local*:
             </label>
-            <input type="text" name="equipLocal" value="{{old('equipLocal')}}" id="equipLocal" placeholder="{{$partit->equipLocal}}" readonly class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
+            <input type="text" name="equipLocal" value="{{$partit->obtenirEquipLocal->nom}}" id="equipLocal"  readonly class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
             <p class="text-slate-500 text-xs italic pb-3">
                (*) L'equip Local no es pot canviar.
             </p>
@@ -79,7 +79,7 @@
                 <label class="block  text-slate-400 text-xs md:text-sm font-semibold tracking-wide mb-2" for="capita">
                     Nom de l'equip Visitant*:
                 </label>
-                <input type="text" name="equipLocal" value="{{old('equipLocal')}}" id="equipLocal" placeholder="{{$partit->equipVisitant}}" readonly class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
+                <input type="text" name="equipLocal" value="{{$partit->obtenirEquipVisitant->nom}}" id="equipLocal"  readonly class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
                 <p class="text-slate-500 text-xs italic pb-3">
                 (*) L'equip Visitant no es pot canviar.
                 </p>
@@ -89,7 +89,7 @@
                 <label class="block  text-slate-400 text-xs md:text-sm font-semibold tracking-wide mb-2" for="capita">
                     Gols equip Local:
                 </label>
-                <input type="text" name="golsEquipLocal" value="{{old('golsEquipLocal')}}" id="golsEquipLocal" placeholder="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
+                <input type="text" name="golsEquipLocal" value="{{$partit->golsEquipLocal}}" id="golsEquipLocal" placeholder="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
                 
                 <p class="text-orange-500 text-xs italic pb-3">
                     @error('golsEquipLocal')
@@ -105,7 +105,7 @@
                 <label class="block  text-slate-400 text-xs md:text-sm font-semibold tracking-wide mb-2" for="capita">
                     Gols equip Visitant:
                 </label>
-                <input type="text" name="golsEquipVisitant" value="{{old('golsEquipVisitant')}}" id="golsEquipVisitant" placeholder="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
+                <input type="text" name="golsEquipVisitant" value="{{$partit->golsEquipVisitant}}" id="golsEquipVisitant"  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
                 
                 <p class="text-orange-500 text-xs italic pb-3">
                     @error('golsEquipVisitant')
@@ -121,7 +121,7 @@
                 <label class="block  text-slate-400 text-xs md:text-sm font-semibold tracking-wide mb-2" for="capita">
                     Resum del partit:
                 </label>
-                <input type="text" name="resumPartit" value="{{old('resumPartit')}}" id="resumPartit" placeholder="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
+                <input type="text" name="resumPartit" value="{{$partit->resumPartit}}" id="resumPartit" placeholder="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline">
                 
                 {{-- <p class="text-orange-500 text-xs italic pb-3">
                     @error('resumPartit')

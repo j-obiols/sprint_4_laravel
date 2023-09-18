@@ -23,10 +23,10 @@ class StoreEquip extends FormRequest
     public function rules(): array
     {
         return [
-            'nom'=>'required',
-            'entrenador'=>'required',
-            'email'=>'required',  
-            'capita'=>'required'    
+            'nom'=>'required|unique:equips',
+            'entrenador'=>'required|string|regex:/^([^0-9]*)$/',
+            'email'=>'required|email',  
+            'capita'=>'required|string|regex:/^([^0-9]*)$/'   
         ];
     
     }
@@ -39,9 +39,15 @@ class StoreEquip extends FormRequest
 
         return [
             'nom.required'=> "El camp nom de l'equip és obligatori.",
+            'nom.unique'=> "Aquest equip ja està registrat.",
             'entrenador.required'=> "El camp nom i cognom de l'entrenador és obligatori.",
+            'entrenador.string'=> "Si-us-plau, introdueixi un nom d'entrenador vàlid.",
+            'entrenador.regex'=> "Si-us-plau, introdueixi un nom d'entrenador vàlid.",
             'email.required'=> "El camp email de l'entrenador és obligatori.",
-            'capita.required'=> "El camp nom i cognom del capità és obligatori."
+            'email.email'=> "Si-us-plau, introdueixi un email vàlid.",
+            'capita.required'=> "El camp nom i cognom del capità és obligatori.",
+            'capita.string'=> "Si-us-plau, introdueixi un nom de capità vàlid.",
+            'capita.regex'=> "Si-us-plau, introdueixi un nom de capità vàlid."
         ];
 
     }
