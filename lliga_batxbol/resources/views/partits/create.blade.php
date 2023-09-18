@@ -17,8 +17,8 @@
                     <label class="block text-slate-400 text-xs md:text-sm font-semibold tracking-wide mb-2" for="dataPartit">
                         Data del partit:
                     </label>
-                    <input type="date" id="dataPartit" name="dataPartit" value="2022-09-01"
-                    min="2022-09-01" max="2023-05-30" value="{{old('dataPartit')}}" class="shadow appearance-none border rounded w-full py-2 px-3 text-slate-500 leading-tight focus:outline-none focus:shadow-outline" >
+                    <input type="date" id="dataPartit" name="dataPartit" value="2023-09-01"
+                    min="2023-09-01"  class="shadow appearance-none border rounded w-full py-2 px-3 text-slate-500 leading-tight focus:outline-none focus:shadow-outline" >
                 </div>
 
                 <p class="text-orange-500 text-xs italic">
