@@ -42,7 +42,7 @@ class StorePartit extends FormRequest
         return [
             'dataPartit'=>'required',
             'horaPartit'=>'required',
-            'camp'=>'required', 
+            'camp'=>'required|string|regex:/^([^0-9]*)$/',
             'equip_local_id'=>'required',
             'equip_visitant_id'=>'required',
             'equip_visitant_id'=>'different:equip_local_id'
@@ -58,6 +58,8 @@ class StorePartit extends FormRequest
             'dataPartit.required'=> "El camp Data és obligatori.",
             'horaPartit.required'=> "El camp Hora és obligatori.",
             'camp.required'=> "El camp Camp és obligatori.",
+            'camp.string'=> "Si-us-plau, introdueixi un nom de camp vàlid.",
+            'camp.regex'=> "Si-us-plau, introdueixi un nom de camp vàlid.",
             'equip_local_id.required'=> "El camp Equip Local és obligatori.",
             'equip_visitant_id.required'=> "El camp Equip Visitant és obligatori.",
             'equip_visitant_id.different'=>"Els dos equips han de ser diferents."

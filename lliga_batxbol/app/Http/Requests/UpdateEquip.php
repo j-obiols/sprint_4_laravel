@@ -22,9 +22,9 @@ class UpdateEquip extends FormRequest
     public function rules(): array
     {
         return [
-            'entrenador'=>'required',
-            'email'=>'required',
-            'capita'=>'required'
+            'entrenador'=>'required|string|regex:/^([^0-9]*)$/',
+            'email'=>'required|email',
+            'capita'=>'required|string|regex:/^([^0-9]*)$/',
         ];
     }
 
@@ -36,8 +36,13 @@ class UpdateEquip extends FormRequest
 
         return [
             'entrenador.required'=> "El camp Nom de l'entrenador és obligatori.",
+            'entrenador.string'=> "Si-us-plau, introdueixi un nom d'entrenador vàlid.",
+            'entrenador.regex'=> "Si-us-plau, introdueixi un nom d'entrenador vàlid.",
             'email.required'=> "El camp Email de l'entrenador és obligatori.",
-            'capita.required'=> "El camp nom i cognom del capità és obligatori."
+            'email.email'=> "Si-us-plau, introdueixi un email vàlid.",
+            'capita.required'=> "El camp nom i cognom del capità és obligatori.",
+            'capita.string'=> "Si-us-plau, introdueixi un nom de capità vàlid.",
+            'capita.regex'=> "Si-us-plau, introdueixi un nom de capità vàlid."
         ];
 
     }
