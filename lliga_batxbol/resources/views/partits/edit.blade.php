@@ -19,8 +19,8 @@
                     Data del partit:
                 </label>
 
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="date" id="start" name="dataPartit" value="2022-10-01"
-                min="2022-10-01" max="2023-05-30" value="{{old('dataPartit', $partit->dataPartit)}}">
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="date" id="start" name="dataPartit" 
+                min="2023-9-01"  value="{{$partit->dataPartit}}">
                 
                 <p class="text-orange-500 text-xs italic pb-3">
                     @error('dataPartit')
@@ -39,7 +39,7 @@
                 </label>
 
                 <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="time" id="horaPartit" name="horaPartit" min="09:00" max="20:00" 
-                value="{{old('horaPartit', $partit->horaPartit)}}">
+                value="{{$partit->horaPartit}}">
                 
                 <p class="text-orange-500 text-xs italic">
                     @error('horaPartit')
