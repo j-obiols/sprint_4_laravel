@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\StorePartit;
 use App\Http\Requests\UpdatePartit;
 
+
 class PartitController extends Controller {
 
 
@@ -81,10 +82,8 @@ class PartitController extends Controller {
         $partit->resumPartit = $request->resumPartit;
         $partit->save();
 
-        //$partit->update($request->all());
-
         if(isset($partit->golsEquipLocal, $partit->golsEquipVisitant)){
-            echo $partit->resultat($partit);
+            echo $partit->gestionarResultat($partit);
         }
 
         return view('partits.show', compact('partit'));
