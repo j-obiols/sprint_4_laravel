@@ -1,4 +1,9 @@
-# LLIGA BATXBOL
+# LLIGA BATXBOL 
+
+
+
+https://github.com/j-obiols/sprint_4_laravel/assets/127688372/49cdee49-8692-46aa-ade5-b584d7361709 
+
 
 ## Descripció i context
 
