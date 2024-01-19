@@ -7,7 +7,7 @@ https://github.com/j-obiols/sprint_4_laravel/assets/127688372/49cdee49-8692-46aa
 
 ## Descripció i context
 
-Aplicació web per gestionar una **lliga de futbol** fictícia, entre equips d'alumnes de Batxillerat d'Instituts de Barcelona,
+Aplicació web amb disseny responsive per gestionar una **lliga de futbol** fictícia, entre equips d'alumnes de Batxillerat d'Instituts de Barcelona,
 desenvolupada en el marc del curs Full Stack de la **IT Academy**.
 
 L'aplicació permet gestionar **equips** i **partits**.  
